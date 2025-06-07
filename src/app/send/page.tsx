@@ -2,10 +2,17 @@
 
 import { useState } from "react";
 
+interface Response {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+}
+
 export default function SendPage() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [response, setResponse] = useState<any>(null);
+  const [response, setResponse] = useState<Response | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
