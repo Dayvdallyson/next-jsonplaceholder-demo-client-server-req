@@ -1,5 +1,4 @@
-// app/posts/page.tsx
-export const dynamic = "force-static"; // cache na build (SSG)
+export const dynamic = "force-static";
 
 interface Post {
   id: number;
@@ -9,7 +8,7 @@ interface Post {
 
 async function getPosts() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    next: { revalidate: 60 }, // ISR: revalida a cada 60s
+    next: { revalidate: 60 },
   });
 
   return res.json();
